@@ -1,4 +1,3 @@
-import requests
 from Load_Data import DataTui, DataShara
 from bs4 import BeautifulSoup
 import json
@@ -52,8 +51,8 @@ def tui_to_dict():
 
 def shara_to_dict():
 	html = open('mebelshara.html', 'r').read()
-	soup = BeautifulSoup(html, 'lxml')
-	cities = soup.find_all('div', {'class': 'city-item'})
+	bs = BeautifulSoup(html, 'lxml')
+	cities = bs.find_all('div', {'class': 'city-item'})
 	shara = []
 	for city in cities:
 		town = city.find('h4', {'class': 'js-city-name'}).extract()

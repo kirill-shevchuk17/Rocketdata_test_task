@@ -1,6 +1,5 @@
 import requests
 from abc import ABC, abstractmethod
-import pandas as pd
 
 
 class Data(ABC):
